@@ -1,0 +1,9 @@
+import requests
+def abc():
+    url=['http://www.17k.com/book/2811825.html','http://zhuanti.17k.com/subject/2018/newbooks/juewangliming/pc/']
+    file='C:/Users/李璐/Desktop/html'
+    with open('C:/Users/李璐/Desktop/html','a',encoding='utf-8',errors = 'ignore') as f:
+        for i in range(2):
+            header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+            response = requests.post('http://www.17k.com/book/2811825.html',headers = header)
+            f.write(response.text)
