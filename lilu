@@ -1,0 +1,48 @@
+import requests
+response = requests.get('http://pic40.photophoto.cn/20160926/0005018347027362_b.jpg')
+print(response.content)
+
+import requests
+response = requests.get('http://pic40.photophoto.cn/20160926/0005018347027362_b.jpg')
+print(response.content)
+with open('/Users/李璐/Desktop/text.jpg','wb') as f:
+    f.write(response.content)
+    
+import requests
+response = requests.get('https://www.baidu.com/s?wd=%E5%B0%8F%E7%8C%AB&rsv_spt=1&rsv_iqid=0xdb80faf700020802&issp=1&f=3&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=1&rsv_sug1=1&rsv_sug7=001&rsv_sug2=1&rsp=0&rsv_sug9=es_2_1&rsv_sug4=1462&rsv_sug=1')
+with open('/Users/李璐/Desktop/text.html','w',encoding='utf-8',errors = 'ignore') as f:
+    f.write(response.text)
+    
+import requests
+login = {'account':'339270737','password':'123456'}
+response = requests.post('http://httpbin.org/post',data=login)
+print(response.text)
+
+import requests
+header = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'}
+response = requests.get('https://www.zhihu.com/explore',headers = header)
+print(response.text)
+
+import requests
+requests.get('http://httpbin.org/cookies/set/number/123456')
+response=requests.get('http://httpbin.org/cookies')
+print(response.text)
+
+import requests
+s=requests.Session()#通过声明Session告诉2次用的是一个浏览器
+s.get('http://httpbin.org/cookies/set/number/123456')
+response=s.get('http://httpbin.org/cookies')
+print(response.text)
+
+import requests
+response =requests.get('http://www.baidu.com',timeout = 1)
+print(response.status_code)
+
+import requests
+try:
+    response = requests.get('http://www.xuwangshishuaige.com')
+    print(response.status_code)
+except Exception as e:
+        print(e)
+        
+       
