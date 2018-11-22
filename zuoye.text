@@ -1,0 +1,123 @@
+1
+mysql> use hello;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+ mysql> create table shop(
+    -> id int primary key not null auto_increment,
+    -> favorite varchar(20),
+    -> discont int not null,
+    -> wish varchar(30));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc shop;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| favorite | varchar(20) | YES  |     | NULL    |                |
+| discont  | int(11)     | NO   |     | NULL    |                |
+| wish     | varchar(30) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)
+
+mysql> insert into shop(id,favorite,discont,wish) values
+    -> (1,"enjoy",30,"pen"),
+    -> (2,"dislike",50,"book"),
+    -> (3,"dislike",60,"apple"),
+    -> (4,"enjoy",90,"egg"),
+    -> (5,"enjoy",70,"phone");
+Query OK, 5 rows affected (0.04 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from shop;
++----+----------+---------+-------+
+| id | favorite | discont | wish  |
++----+----------+---------+-------+
+|  1 | enjoy    |      30 | pen   |
+|  2 | dislike  |      50 | book  |
+|  3 | dislike  |      60 | apple |
+|  4 | enjoy    |      90 | egg   |
+|  5 | enjoy    |      70 | phone |
++----+----------+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> update shop  set  wish="card"  where id=4;
+
+Query OK, 1 row affected (3.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from shop;
++----+----------+---------+-------+
+| id | favorite | discont | wish  |
++----+----------+---------+-------+
+|  1 | enjoy    |      30 | pen   |
+|  2 | dislike  |      50 | book  |
+|  3 | dislike  |      60 | apple |
+|  4 | enjoy    |      90 | card  |
+|  5 | enjoy    |      70 | phone |
++----+----------+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> delete from shop where id=3;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from shop;
++----+----------+---------+-------+
+| id | favorite | discont | wish  |
++----+----------+---------+-------+
+|  1 | enjoy    |      30 | pen   |
+|  2 | dislike  |      50 | book  |
+|  4 | enjoy    |      90 | card  |
+|  5 | enjoy    |      70 | phone |
++----+----------+---------+-------+
+4 rows in set (0.00 sec)
+
+2
+mysql> select * from salgrade;
++-------+-------+-------+
+| GRADE | LOSAL | HISAL |
++-------+-------+-------+
+| 1     | 700   | 1200  |
+| 2     | 1201  | 1400  |
+| 3     | 1401  | 2000  |
+| 4     | 2001  | 3000  |
+| 5     | 3001  | 9999  |
++-------+-------+-------+
+5 rows in set (0.03 sec)
+
+mysql> select losal from salgrade;
++-------+
+| losal |
++-------+
+| 700   |
+| 1201  |
+| 1401  |
+| 2001  |
+| 3001  |
++-------+
+5 rows in set (0.00 sec)
+
+mysql> mysql> select * from salgrade order by hisal desc;
++-------+-------+-------+
+| GRADE | LOSAL | HISAL |
++-------+-------+-------+
+| 5     | 3001  | 9999  |
+| 4     | 2001  | 3000  |
+| 3     | 1401  | 2000  |
+| 2     | 1201  | 1400  |
+| 1     | 700   | 1200  |
++-------+-------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select min(losal) from salgrade;
++------------+
+| min(losal) |
++------------+
+| 1201       |
++------------+
+1 row in set (0.06 sec)
+
+
