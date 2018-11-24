@@ -1,0 +1,146 @@
+11111111111111111
+mysql> select sal,max(empno) from emp group by sal having (sal)>1;
++------+------------+
+| sal  | max(empno) |
++------+------------+
+|  800 |       7369 |
+|  950 |       7900 |
+| 1100 |       7876 |
+| 1250 |       7654 |
+| 1300 |       7934 |
+| 1500 |       7844 |
+| 1600 |       7499 |
+| 2450 |       7782 |
+| 2850 |       7698 |
+| 2975 |       7566 |
+| 3000 |       7902 |
+| 5000 |       7839 |
++------+------------+
+12 rows in set (0.06 sec)
+
+mysql> select * from emp where emp.empno not in (select min(empno) from emp group by sal having  (sal)>1);
++-------+--------+----------+------+-----------+------+---------+--------+
+| EMPNO | ENAME  | JOB      | MGR  | HIREDATE  | SAL  | COMM    | DEPTNO |
++-------+--------+----------+------+-----------+------+---------+--------+
+|  7654 | MARTIN | SALESMAN | 7698 | 1981/9/28 | 1250 | 1400.00 | 30     |
+|  7902 | FORD   | ANALYST  | 7566 | 1981/12/3 | 3000 |         | 20     |
++-------+--------+----------+------+-----------+------+---------+--------+
+2 rows in set (0.00 sec)
+
+
+
+22222222222222
+mysql> create table dy(
+    -> id int primary key not null auto_increment,
+    -> name varchar(30),
+    -> year int not null,
+    -> direct varchar(30),
+    -> number int not null);
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> insert into dy(id,name,year,direct,number) values
+    -> (1,"zhanlang",2017,"wujing",8),
+    -> (2,"jueditaowang",2016,"leinihalin",6),
+    -> (3,"tangrenjietanan",2015,"chensicheng",7),    
+    -> (4,"wobushiyaoshen",2018,"wenmuye",9),
+    -> (5,"xihongshishoufu",2018,"yanfei",7);
+Query OK, 5 rows affected (0.08 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from dy;
++----+-----------------+------+-------------+--------+
+| id | name            | year | direct      | number |
++----+-----------------+------+-------------+--------+
+|  1 | zhanlang        | 2017 | wujing      |      8 |
+|  2 | jueditaowang    | 2016 | leinihalin  |      6 |
+|  3 | tangrenjietanan | 2015 | chensicheng |      7 |
+|  4 | wobushiyaoshen  | 2018 | wenmuye     |      9 |
+|  5 | xihongshishoufu | 2018 | yanfei      |      7 |
++----+-----------------+------+-------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from dy where name like "%wobushiyaoshen%";
++----+----------------+------+---------+--------+
+| id | name           | year | direct  | number |
++----+----------------+------+---------+--------+
+|  4 | wobushiyaoshen | 2018 | wenmuye |      9 |
++----+----------------+------+---------+--------+
+1 row in set (0.04 sec)
+
+mysql> select * from dy where direct like "%wujing%";
++----+----------+------+--------+--------+
+| id | name     | year | direct | number |
++----+----------+------+--------+--------+
+|  1 | zhanlang | 2017 | wujing |      8 |
++----+----------+------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from dy where year like "2015";
++----+-----------------+------+-------------+--------+
+| id | name            | year | direct      | number |
++----+-----------------+------+-------------+--------+
+|  3 | tangrenjietanan | 2015 | chensicheng |      7 |
++----+-----------------+------+-------------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from dy where number like "9";
++----+----------------+------+---------+--------+
+| id | name           | year | direct  | number |
++----+----------------+------+---------+--------+
+|  4 | wobushiyaoshen | 2018 | wenmuye |      9 |
++----+----------------+------+---------+--------+
+1 row in set (0.00 sec)
+
+
+
+3333333333333333
+mysql> create table collect(
+    -> id int primary key not null auto_increment,
+    -> name varchar(20),
+    -> money int not null);
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> desc collect;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20) | YES  |     | NULL    |                |
+| money | int(11)     | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+3 rows in set (0.04 sec)
+
+mysql> alter table collect add shoucang int default 0;
+Query OK, 0 rows affected (0.21 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc collect;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(20) | YES  |     | NULL    |                |
+| money    | int(11)     | NO   |     | NULL    |                |
+| shoucang | int(11)     | YES  |     | 0       |                |
++----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> alter table collect drop shoucang;
+Query OK, 0 rows affected (0.39 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc collect;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20) | YES  |     | NULL    |                |
+| money | int(11)     | NO   |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+3 rows in set (0.06 sec)
+
+
+44444444444444444
+
+
+
