@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <table>
+       <table border="1"  cellspacing="0" cellpadding="30">
+    <tr align="center" >
+         <td style="color: black;background-color:	#E6E6FA">星期日</td>
+         <td style="color: black;background-color:	#E6E6FA">星期一</td>
+         <td style="color: black;background-color:	#E6E6FA">星期二</td>
+         <td style="color: black;background-color:	#E6E6FA">星期三</td>
+         <td style="color: black;background-color:	#E6E6FA">星期四</td>
+         <td style="color: black;background-color:	#E6E6FA">星期五</td>
+         <td style="color: black;background-color:	#E6E6FA">星期六</td>
+    </tr>  
+    <tr align="center">
+         <td style="color: #EE7942;background-color:rgb(255, 255, 255)">28<p style="color: black">二十</p></td>   
+         <td style="color: rgb(57, 28, 245);background-color:rgb(255, 255, 255)">29<p style="color: black">廿一</p></td>  
+         <td style="color: rgb(57, 28, 245);background-color:rgb(255, 255, 255)">30<p style="color: black">廿二</p></td>  
+         <td style="color: rgb(57, 28, 245);background-color:rgb(255, 255, 255)">31<p style="color: black">廿三</p></td>  
+         <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">1<p style="color: black">廿四</p></td>   
+         <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">2<p style="color: black">廿五</p></td>
+         <td style="color: #EE7942;background-color:#FFFAFA">3<p style="color: black">廿六</p></td>
+    </tr>
+    <tr align="center">
+        <td style="color: #EE7942;background-color:#FFFAFA">4<p style="color: black">廿七</p></td>
+        <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">5<p style="color: black">廿八</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">6<p style="color: black">廿九</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">7<p style="color: #EE7942">立冬</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">8<p style="color: black">十月</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color:#FFFAFA">9<p style="color: black">初二</p></td>
+        <td style="color: #EE7942;background-color:#FFFAFA">10<p style="color: black">初三</p></td>
+    </tr>   
+    <tr align="center"">
+        <td style="color: #EE7942;background-color:#FFFAFA">11<p style="color: black">初四</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color: #FFFAFA">12<p style="color: black">初五</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color: #FFFAFA">13<p style="color: black">初六</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color: #FFFAFA">14<p style="color: black">初七</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color: #FFFAFA">15<p style="color: black">初八</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color: #FFFAFA">16<p style="color: black">初九</p></td>
+        <td style="color: #EE7942;background-color:	#FFFAFA">17<p style="color: black">初十</p></td>             
+    </tr>
+    <tr align="center">
+        <td style="color: #EE7942;background-color:	#FFFAFA">18<p style="color: black">十一</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">19<p style="color: black">十二</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:   #FFFAFA">20<p style="color: black">十三</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">21<p style="color: black">十四</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">22<p style="color: black">十五</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA" >23<p style="color: black">十六</p></td>
+        <td style="color: #EE7942;background-color:	#FFFAFA">24<p style="color: black">十七</p></td>             
+    </tr>
+    <tr align="center">
+        <td style="color: #EE7942;background-color:	#FFFAFA">25<p style="color: black">十八</p</td>   
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">26<p style="color: black">十九</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">27<p style="color: black">廿十</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">28<p style="color: black">廿一</p></td>  
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">29<p style="color:#EE7942">下元节</p></td>   
+        <td style="color: rgb(57, 28, 245);background-color:	#FFFAFA">30<p style="color: black">廿三</p></td>
+        <td style="color: #EE7942;background-color:	rgb(255, 255, 255)">1<p style="color: black">廿四</p></td>             
+    </tr>
+
+   </table>
+ 
+  
+</body>
+</html>
